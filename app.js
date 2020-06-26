@@ -5,6 +5,7 @@ let totalCost = 0;
 
 function onReady() {
   $('#js-submit-button').on('click', submitForm);
+  $('#js-table').on('click', '.js-row', fired);
 }
 
 function submitForm(event) {
@@ -19,11 +20,12 @@ function submitForm(event) {
   employeeInfo.push(employee);
 
   $('#js-table').append(`
-  <tr>
+  <tr class='js-row'>
   <td>${employee.firstName}</td>
   <td>${employee.lastName}</td>
   <td>${employee.idNumber}</td>
-  <td>${employee.annualSalary}</td></tr>`);
+  <td>${employee.annualSalary}</td>
+  <td><button class='delete-button'>Fired!</td></tr>`);
   $('#js-table-body').empty();
   totalCost = 0;
 
@@ -32,7 +34,14 @@ function submitForm(event) {
     totalCost += employee.annualSalary / 12;
     console.log(totalCost);
     $('.js-total').empty();
-    $('.js-total').append(`<h2>Total Monthly Cost: $${totalCost}</h2>`);
+    $('.js-total').append(
+      `<h2>Total Monthly Cost: $${totalCost.toFixed(2)}</h2>`
+    );
+    if (totalCost > 20000) {
+      $('.js-total').addClass('red');
+    } else {
+      $('.js-total').removeClass('red');
+    }
   }
 
   render();
@@ -43,5 +52,8 @@ function render() {
   $('#js-in-lastName').val('');
   $('#js-in-idNum').val('');
   $('#js-in-annualsal').val('');
-  $('#js-table-body').empty();
+}
+
+function fired() {
+  $(this).remove();
 }
