@@ -31,6 +31,8 @@ function submitForm(event) {
     employee.annualSalary = parseFloat(employee.annualSalary);
     totalCost += employee.annualSalary / 12;
     console.log(totalCost);
+    $('.js-total').empty();
+    $('.js-total').append(`<h2>Total Monthly Cost: $${totalCost}</h2>`);
   }
 
   render();
