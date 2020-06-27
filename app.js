@@ -11,6 +11,14 @@ function onReady() {
 function submitForm(event) {
   event.preventDefault();
 
+  appendTable();
+
+  forOfLoop();
+
+  render();
+}
+
+function appendTable() {
   const employee = {
     firstName: $('#js-in-firstName').val(),
     lastName: $('#js-in-lastName').val(),
@@ -20,22 +28,24 @@ function submitForm(event) {
   employeeInfo.push(employee);
 
   $('#js-table').append(`
-  <tr class='js-row'>
-  <td>${employee.firstName}</td>
-  <td>${employee.lastName}</td>
-  <td>${employee.idNumber}</td>
-  <td>${employee.annualSalary}</td>
-  <td><button class='delete-button'>Fired!</td></tr>`);
+  <tr class='js-row wantborders'>
+  <td class='wantborders darker'>${employee.firstName}</td>
+  <td class='wantborders lighter'>${employee.lastName}</td>
+  <td class='wantborders darker'>${employee.idNumber}</td>
+  <td class='wantborders lighter'>${employee.annualSalary}</td>
+  <td class='wantborders darker'><button class='btn btn-warning delete-button'>Fired!</td></tr>`);
   $('#js-table-body').empty();
   totalCost = 0;
+}
 
+function forOfLoop() {
   for (let employee of employeeInfo) {
     employee.annualSalary = parseFloat(employee.annualSalary);
     totalCost += employee.annualSalary / 12;
     console.log(totalCost);
     $('.js-total').empty();
     $('.js-total').append(
-      `<h2>Total Monthly Cost: $${totalCost.toFixed(2)}</h2>`
+      `<h2 class="potato">Total Monthly Cost: $${totalCost.toFixed(2)}</h2>`
     );
     if (totalCost > 20000) {
       $('.js-total').addClass('red');
@@ -43,10 +53,7 @@ function submitForm(event) {
       $('.js-total').removeClass('red');
     }
   }
-
-  render();
 }
-
 function render() {
   $('#js-in-firstName').val('');
   $('#js-in-lastName').val('');
@@ -56,4 +63,6 @@ function render() {
 
 function fired() {
   $(this).remove();
+  // $(this).data($(this).text();
 }
+//a13b08

@@ -2,13 +2,18 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="jquery.js"></script>
     <script src="app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Salary Calculator</title>
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">Add New Employee</h1>
+        <p class="capitalism">Add newly hired employees or fire someone. Capitalism, baby!</p>
+    </div>
 </head>
 
 <body>
@@ -17,23 +22,24 @@
         <input id="js-in-lastName" type="text" placeholder="Last Name" />
         <input id="js-in-idNum" type="text" placeholder="ID Number" />
         <input id="js-in-annualsal" type="text" placeholder="Annual Salary" />
-        <button id="js-submit-button">Submit</button>
+        <button id="js-submit-button" class="btn btn-info">Submit</button>
     </form>
     <div>
-        <table id='js-table'>
-            <thead>
-                <tr>
-                    <th>First Name: </th>
-                    <th>Last Name: </th>
-                    <th>ID Number: </th>
-                    <th>Annual Salary: </th>
+        <table id='js-table' class="table">
+            <thead class="thead-dark">
+                <tr class="wantborders">
+                    <th class='wantborders'>First Name: </th>
+                    <th class='wantborders'>Last Name: </th>
+                    <th class='wantborders'>ID Number: </th>
+                    <th class='wantborders'>Annual Salary: </th>
+                    <th class='wantborders'>Terminate Employee?</th>
                 </tr>
             </thead>
             <tbody id="js-table-body"></tbody>
         </table>
     </div>
     <div class='js-total'>
-        <h2>Total Monthly Cost:</h2>
+        <h2 class="potato">Total Monthly Cost:</h2>
     </div>
 </body>
 

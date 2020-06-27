@@ -1,3 +1,63 @@
 .red {
   background-color: red;
 }
+
+.btn-warning {
+  background-color: rgb(254, 110, 0);
+}
+
+.jumbotron {
+  background-color: #f37e4b;
+  border-style: dashed;
+  border-color: #fdcca3;
+}
+
+.display-4,
+.capitalism {
+  margin-left: 10px;
+  color: #6e4236;
+}
+
+.display-4 {
+  text-decoration: underline;
+}
+
+body {
+  background-color: #8ad8d3;
+}
+
+#js-employee-form {
+  text-align: center;
+}
+
+.btn {
+  border-color: #fdcca3;
+  border-style: groove;
+}
+
+.wantborders {
+  border-style: double;
+  border-color: #123c3d;
+  border-width: 10px;
+}
+
+.table {
+  text-align: center;
+  margin: 4px, 4px, 4px, 4px;
+}
+
+.thead-dark {
+  opacity: 0.6;
+}
+
+.potato {
+  color: #003c3d;
+}
+
+.darker {
+  background-color: #02babc;
+}
+
+.lighter {
+  background-color: #fdcca3;
+}
